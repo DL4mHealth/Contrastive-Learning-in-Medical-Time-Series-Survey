@@ -1,6 +1,6 @@
 # Self-Supervised Contrastive Learning for Medical Time Series: A Systematic Review
 
-This is for the survey paper **Self-Supervised Contrastive Learning for Medical Time Series: A Systematic Review** which was published in *Sensors* in 2023. More details will be added later.
+This is for the survey paper **Self-Supervised Contrastive Learning for Medical Time Series: A Systematic Review** which was published in *Sensors* in 2023. 
 
 [Paper link.](https://www.mdpi.com/1424-8220/23/9/4221)
 
@@ -10,11 +10,26 @@ Authors: Ziyu Liu (ziyu.liu2@student.rmit.edu.au), Azadeh Alavi (azadeh.alavi@rm
 We carefully reviewed 43 papers in the field of self-supervised contrastive learning for medical time series. Specifically, this paper outlines the pipeline of contrastive learning, including pre-training, fine-tuning, and testing. We provide a comprehensive summary of the various augmentations applied to medical time series data, the architectures of pre-training encoders, the types of fine-tuning classifiers and clusters, and the popular contrastive loss functions. Moreover, we present an overview of the different data types used in medical time series, highlight the medical applications of interest, and provide a comprehensive table of 51 public datasets that have been utilized in this field. In addition, this paper will provide a discussion on the promising future scopes such as providing guidance for effective augmentation design, developing a unified framework for analyzing hierarchical time series, and investigating methods for processing multimodal data. Despite being in its early stages, self-supervised contrastive learning has shown great potential in overcoming the need for expert-created annotations in the research of medical time series.
 
 ## This repo includes:  
-* the implementation of time series augmentations (xx.ipython) file;  
-* an extended summary table of the 34 reviewed papers, including title, author/year, challenges, contributions, scenario/task/findings, datasets, preprocessing/perturbation, model, performance and link to their implementation codes (if publically released). 
+* The implementation of time series augmentations (xx.ipython) file;  
+* An extended summary table of the 34 reviewed papers, including title, author/year, challenges, contributions, scenario/task/findings, datasets, preprocessing/perturbation, model, performance and link to their implementation codes (if publically released). 
+
+## Citation
+If you find this paper useful for your research, please consider citing it:
+
+```
+  @Article{liuself2023survey,
+    AUTHOR = {Liu, Ziyu and Alavi, Azadeh and Li, Minyi and Zhang, Xiang},
+    TITLE = {Self-Supervised Contrastive Learning for Medical Time Series: A Systematic Review},
+    JOURNAL = {Sensors},
+    VOLUME = {23},
+    YEAR = {2023},
+    NUMBER = {9},
+    DOI = {10.3390/s23094221}
+    }
+```
 
 
-### Extended summary table:
+## Extended summary table:
 | Title  	| Author (Year) 	| Challenge 	| Contribution 	| Scenario/task/findings 	| Datsets 	| Preprocessing/perturbation 	| Model 	| Performance 	| Code 	|
 |:---:	|---	|---	|---	|---	|---	|---	|---	|---	|---	|
 | First Steps <br>Towards <br>Self-Supervised <br>Pretraining <br>of the <br>12-Lead ECG 	| Gedon et al. <br>(2022) 	| Discover a supervision signal from the data itself for self-supervised represenation learning 	| 1) Define a self-supervised learning task and pretraining procedure which <br>can learn generalizable features of ECG data, <br>2) Develop and show that a ResNet based architecture can successfully be <br>used in combination with our learning task.  	| ECG reconstruction and <br>(anomalies)classification; <br>Pretraining on the CODE <br>training dataset, <br>Use transfer learning <br>with the ECG benchmarks: <br>PTB-XL and CPSC dataset; 	| CODE, <br>CPSC 2018, <br>PTB-XL 	|  	| U-ResNet: <br>ResNet + encoder-decoder <br>+ channel-wise dense layer<br> + U-Net based skip-connections.  <br>Downstream task(classification): <br>encoder (no bottleneck layer, <br>no U-Net skip connections) + <br>linear classifier  	| AUC：<br>CPSC: <br>+PT: <br>0.954; <br><br>PTB-XL:<br>+PT: <br>0.919 	| - 	|
