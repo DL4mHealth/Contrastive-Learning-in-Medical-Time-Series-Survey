@@ -18,9 +18,9 @@ This is for the survey paper **Self-Supervised Contrastive Learning for Medical 
 We carefully reviewed 43 papers in the field of self-supervised contrastive learning for medical time series. Specifically, this paper outlines the pipeline of contrastive learning, including pre-training, fine-tuning, and testing. We provide a comprehensive summary of the various augmentations applied to medical time series data, the architectures of pre-training encoders, the types of fine-tuning classifiers and clusters, and the popular contrastive loss functions. Moreover, we present an overview of the different data types used in medical time series, highlight the medical applications of interest, and provide a comprehensive table of 51 public datasets that have been utilized in this field. In addition, this paper will provide a discussion on the promising future scopes such as providing guidance for effective augmentation design, developing a unified framework for analyzing hierarchical time series, and investigating methods for processing multimodal data. Despite being in its early stages, self-supervised contrastive learning has shown great potential in overcoming the need for expert-created annotations in the research of medical time series.
 
 ## This repo includes:  
-* The implementation of time series augmentations ([Timeseries_augmentations.ipynb](https://github.com/DL4mHealth/Contrastive-Learning-in-Medical-Time-Series-Survey/blob/main/Time_series_augmentations.ipynb)) file, this file augments the time series data at sample-level. We will release the code that can achieve augmentation at batch-level and dataset-level later.     
-* [Summarized Datasets Table](#summarized-datasets-table)
-* [Summarized Studies Table](#summarized-studies-table) An extended summary table of the 43 reviewed papers, including title, author/year, challenges, contributions, scenario/task/findings, datasets, preprocessing/perturbation, model, performance and link to their implementation codes (if publically released). 
+* **[Timeseries_augmentations.ipynb](/main/Time_series_augmentations.ipynb)**: The implementation of time series augmentations file, this file augments the time series data at sample-level. We will release the code that can achieve augmentation at batch-level and dataset-level later. 
+* **[Summarized Datasets Table](#summarized-datasets-table)**: Summary of medical time series (e.g., physiological signal) public datasets that are used in the reviewed papers. The datasets are ordered by the data type. (Identical to the version in the paper except for the citation of the dataset)
+* **[Summarized Studies Table](#summarized-studies-table)**: An extended summary table of the 43 reviewed papers, including title, author/year, challenges, contributions, scenario/task/findings, datasets, preprocessing/perturbation, model, performance and link to their implementation codes (if publically released). 
 
 ## Citation
 If you find this paper useful for your research, please consider citing it:
@@ -36,8 +36,65 @@ If you find this paper useful for your research, please consider citing it:
     DOI = {10.3390/s23094221}
     }
 ```
-## Summarized Datasets Table
+***
 
+## Summarized Datasets Table
+| Dataset 	| Data type 	| # of Subjects 	| Frequency(Hz) 	| # of Channels 	| Task 	|
+|---	|---	|---	|---	|---	|---	|
+| MotionSense 	| Acceleration,<br>Angular velocity 	| 24 	| 50 	| 12 	| Activity Recognition 	|
+| HHAR 	| Acceleration,<br>Angular velocity 	| 9 	| 50-200 	| 16 	| Activity Recognition 	|
+| MobiAct 	| Acceleration,<br>Angular velocity 	| 57 	| 20 	| 6 	| Activity Recognition 	|
+| UCI HAR 	| Acceleration,<br>Angular velocity 	| 30 	| 50 	| 6 	| Activity Recognition 	|
+| PSG dataset 	| Acceleration,<br>HR, Steps 	| 31 	| - 	| Acceleration: 3<br>HR: 1<br>Steps: 1 	| Sleep study 	|
+| Dutch STAN trial 	| CTG 	| 5,681 	| - 	| - 	| Fetal monitoring 	|
+| DiCOVA-ICASSP <br>2022 challenge 	| Cough, <br>Speech,<br>Breath 	| - 	| 44.1k 	| - 	| COVID detection 	|
+| CODE 	| ECG 	| 1,558,415 	| 300-1000 	| 12 	| ECG abnormalities detection 	|
+| Ribeiro 	| ECG 	| 827 	|  	| 12 	| Automatic diagnosis of ECG 	|
+| PhysioNet 2020 	| ECG 	| 6877 	|  	| 12 	| ECG classification 	|
+| MIT-BIH Arrhythmia <br>Database 	| ECG 	| 47 	| 125 	| 2 	| Cardiac arrhythmia study 	|
+| PhysioNet 2017 	| ECG 	| 8528 (recordings) 	| 300 	| 1 	| AF(ECG) Classification 	|
+| CPSC 2018<br>(ICBEB2018) 	| ECG 	| 6,877 	| 500 	| 12 	| Heart diseases study 	|
+| PTB diagnostic ECG 	| ECG 	| 290 	| 125 	| 14 	| Heart diseases study 	|
+| Chapman-Shaoxing 	| ECG 	| 10,646 	| 500 	| 12 	| Cardiac arrhythmia study 	|
+| Cardiology 	| ECG 	| 328 	|  	| 1 	| Cardiologist-level arrhythmia detection and classification 	|
+| PTB-XL 	| ECG 	| 18,869 	| 100 	| 12 	| Heart diseases study 	|
+| MIT-BIH-SUP 	| ECG 	| 78 	| 128 	| - 	| Supplement of supraventricular arrhythmias in the MIT-BIH Arrhythmia Database 	|
+| Physiological <br>Synchrony <br>Selective <br>Attention 	| ECG,<br>EEG,<br>EDA 	| 26 	| 1024 	| EEG:32<br>EDA: 2<br>ECG:2 	| Attention focus study 	|
+| Sleep Heart <br>Health Study<br>(SHHS) 	| ECG,<br>EEG,<br>EOG,<br>EMG,<br>SpO2,<br>RR 	| 9,736 	| EEG: 125<br>EOG: 50<br>EMG: 125<br>ECG: 125/250<br>SpO2: 1<br>RR: 10 	| EEG: 2<br>EOG: 2<br>EMG: 1<br>ECG: 1<br>SpO2: 1<br>RR: 1 	| Sleep-disordered breathing study 	|
+| AMIGOS 	| ECG,<br>EEG,<br>GSR 	| 40 	| ECG: 256<br>EEG: 128<br>GSR: 128 	| ECG: 4<br>EEG: 14<br>GSR: 2 	| Emotional states recognition 	|
+| MPI LEMON 	| EEG, <br>fMRI 	| 227 	| EEG: 2500 	| EEG: 62 	| Mind-body-emotion interactions study 	|
+| PhysioNet 2016 	| ECG, PCG 	| 3,126 	| 2000 	| 2 	| Heart Sound Recordings classification 	|
+| WESAD 	| ECG, Temperature,<br>Blood volume pulse, <br>Acceleration, etc. 	| 15 	| ECG: 700 	| ECG: 1 	| Wearable Stress and Affect Detection 	|
+| SWELL 	| ECG, Facial expressions, etc. 	| 25 	| ECG: 2048 	| - 	| Work psychology study 	|
+| The Fenland study 	| ECG, HR, <br>Acceleration, etc. 	| 2100 	| - 	| - 	| Obesity, type 2 diabetes, and related metabolic disorders study 	|
+| SEED 	| EEG 	| 15 	| 200 	| 62 	| EEG-based Emotion Recognition 	|
+| TUSZ<br>(The TUH EEG <br>Seizure Corpus) 	| EEG 	| 315 	| 250 	| 21 	| Seizure study 	|
+| TUAB<br>(TUH EEG <br>Abnormal Corpus) 	| EEG 	| 564 	| 250 	| 21 	| ECG abnormalities study 	|
+| EEG Motor <br>Movement/Imagery <br>Dataset 	| EEG 	| 109 	| 160 	| 64 	| General-Purpose 	|
+| BCI Competition <br>IV-2A 	| EEG 	| 9 	| 250 	| 22 	| Motor-Imagery classification 	|
+| Sleep-EDF Database <br>Expanded<br>(Sleep-EDFx) 	| EEG 	| 197 	| 100 	| 2 	| Sleep study 	|
+| MGH Sleep 	| EEG 	| 2621 	| 200 	| 6 	| Sleep study 	|
+| MI-2 Dataset 	| EEG 	| 25 	| 200 	| 62 	| Motor-Imagery classification 	|
+| EPILEPSIAE 	| EEG 	| 275 	| 250 	| - 	| Seizure study 	|
+| UPenn&Mayo Clinic's <br>Seizure Detection <br>Challenge 	| EEG (Intracranial) 	| 4 dogs<br>8 human patients 	| 400 	| 16 	| Seizure study 	|
+| Dreem Open Dataset<br>-Healthy<br>(DOD-H) 	| EEG (PSG data) 	| 25 	| 250 	| 12 	| Sleep study 	|
+| Dreem Open Dataset<br>-Obstructive <br>(DOD-O) 	| EEG (PSG data) 	| 55 	| 250 	| 8 	| Sleep study 	|
+| DREAMER 	| EEG,<br>ECG 	| 23 	| ECG: 256 	| ECG: 4 	| Affect recognition 	|
+| Montreal Archive <br>of Sleep Studies <br>(MASS) 	| EEG, EMG, EOG 	| 200 	| 256 	| 16-21* 	| Sleep study 	|
+| PhysioNet 2018 	| EEG, EOG, EMG, EKG, SaO2 	| 1,985 	| 200 	| 5 	| Diagnosis of sleep disorders 	|
+| ISRUC-SLEEP 	| EEG, EOG, EMG, EKG, SaO2 	| 100/8/10* 	| EEG: 200<br>EOG: 200<br>EMG: 200<br>EKG: 200<br>SaO2: 12.5 	| EEG: 6<br>EOG: 2<br>EMG: 2<br>EKG: 1<br>SaO2: 1 	| Sleep study 	|
+| Sleep-EDF 	| EEG, EOG, chin EMG 	| 20 	| 100 	| 2 	|  	|
+| MIT DriverDb 	| EKG, EMG, EDA, PR 	| 17 	| EKG: 496<br>EMG: 15.5<br>EDA: 31<br>PR: 31 	| EKG: 1<br>EMG: 1<br>EDA: 1<br>PR: 1 	| Stress detection 	|
+| High time Resolution <br>ICU Dataset<br>(HiRID) 	| ICU 	| 33,000+ 	|  	|  	| - 	|
+| eICU 	| ICU 	| - 	| - 	| ~160 variables 	| - 	|
+| PhysioNet 2012 	| ICU 	| 12,000 	| - 	| 37 	| Mortality prediction 	|
+| MIMIC-III 	| ICU 	| 4000+ 	| - 	| - 	| - 	|
+| PhysioNet 2022 	| PCG 	| 1,568 	| 4000 	| 5 	| Heart Murmur Detection 	|
+| ICBHI 2017 	| Respiratory sound 	| 126 	| 4,000 	| 1 	| Computational lung auscultation 	|
+| LibriSpeech <br>dataset 	| Voice 	| 251 	| 16k 	| - 	| Speech Recognition 	|
+| mPower data 	| Voice, Walking kinematics 	| 3,101 (walking kinematics) 	| - 	| - 	| Parkinson disease study though mobile data 	|
+
+***
 ## Summarized Studies Table
 | Title  	| Author (Year) 	| Challenge 	| Contribution 	| Scenario/task/findings 	| Datsets 	| Preprocessing/perturbation 	| Model 	| Performance 	| Code 	|
 |:---:	|---	|---	|---	|---	|---	|---	|---	|---	|---	|
