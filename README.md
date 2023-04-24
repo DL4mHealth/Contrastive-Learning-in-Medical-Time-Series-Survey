@@ -11,7 +11,7 @@ We carefully reviewed 43 papers in the field of self-supervised contrastive lear
 
 ## This repo includes:  
 * The implementation of time series augmentations (xx.ipython) file;  
-* An extended summary table of the 34 reviewed papers, including title, author/year, challenges, contributions, scenario/task/findings, datasets, preprocessing/perturbation, model, performance and link to their implementation codes (if publically released). 
+* An extended summary table of the 43 reviewed papers, including title, author/year, challenges, contributions, scenario/task/findings, datasets, preprocessing/perturbation, model, performance and link to their implementation codes (if publically released). 
 
 ## Citation
 If you find this paper useful for your research, please consider citing it:
