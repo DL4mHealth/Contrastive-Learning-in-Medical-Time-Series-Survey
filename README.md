@@ -6,15 +6,16 @@
 
 This is for the survey paper **Self-Supervised Contrastive Learning for Medical Time Series: A Systematic Review** which was published in *Sensors* in 2023. 
 
-[Paper link.](https://www.mdpi.com/1424-8220/23/9/4221)
 
-Authors: Ziyu Liu (ziyu.liu2@student.rmit.edu.au), Azadeh Alavi (azadeh.alavi@rmit.edu.au), Minyi Li (liminyi0709@gmail.com) and Xiang Zhang (xiang.zhang@uncc.edu)
+### Authors: Ziyu Liu (ziyu.liu2@student.rmit.edu.au), Azadeh Alavi (azadeh.alavi@rmit.edu.au), Minyi Li (liminyi0709@gmail.com) and Xiang Zhang (xiang.zhang@uncc.edu)
+
+### [Paper link](https://www.mdpi.com/1424-8220/23/9/4221)
 
 ## Summary:   
 We carefully reviewed 43 papers in the field of self-supervised contrastive learning for medical time series. Specifically, this paper outlines the pipeline of contrastive learning, including pre-training, fine-tuning, and testing. We provide a comprehensive summary of the various augmentations applied to medical time series data, the architectures of pre-training encoders, the types of fine-tuning classifiers and clusters, and the popular contrastive loss functions. Moreover, we present an overview of the different data types used in medical time series, highlight the medical applications of interest, and provide a comprehensive table of 51 public datasets that have been utilized in this field. In addition, this paper will provide a discussion on the promising future scopes such as providing guidance for effective augmentation design, developing a unified framework for analyzing hierarchical time series, and investigating methods for processing multimodal data. Despite being in its early stages, self-supervised contrastive learning has shown great potential in overcoming the need for expert-created annotations in the research of medical time series.
 
 ## This repo includes:  
-* The implementation of time series augmentations (xx.ipython) file;  
+* The implementation of time series augmentations (Timeseries_augmentations.ipynb) file, this file augments the time series data at sample-level. We will release the code that can achieve augmentation at batch-level and dataset-level later.     
 * An extended summary table of the 43 reviewed papers, including title, author/year, challenges, contributions, scenario/task/findings, datasets, preprocessing/perturbation, model, performance and link to their implementation codes (if publically released). 
 
 ## Citation
