@@ -11,12 +11,16 @@ This is for the survey paper **Self-Supervised Contrastive Learning for Medical 
 
 ### [Paper link](https://www.mdpi.com/1424-8220/23/9/4221)
 
+---
+
+
 ## Summary:   
 We carefully reviewed 43 papers in the field of self-supervised contrastive learning for medical time series. Specifically, this paper outlines the pipeline of contrastive learning, including pre-training, fine-tuning, and testing. We provide a comprehensive summary of the various augmentations applied to medical time series data, the architectures of pre-training encoders, the types of fine-tuning classifiers and clusters, and the popular contrastive loss functions. Moreover, we present an overview of the different data types used in medical time series, highlight the medical applications of interest, and provide a comprehensive table of 51 public datasets that have been utilized in this field. In addition, this paper will provide a discussion on the promising future scopes such as providing guidance for effective augmentation design, developing a unified framework for analyzing hierarchical time series, and investigating methods for processing multimodal data. Despite being in its early stages, self-supervised contrastive learning has shown great potential in overcoming the need for expert-created annotations in the research of medical time series.
 
 ## This repo includes:  
 * The implementation of time series augmentations ([Timeseries_augmentations.ipynb](https://github.com/DL4mHealth/Contrastive-Learning-in-Medical-Time-Series-Survey/blob/main/Time_series_augmentations.ipynb)) file, this file augments the time series data at sample-level. We will release the code that can achieve augmentation at batch-level and dataset-level later.     
-* An extended summary table of the 43 reviewed papers, including title, author/year, challenges, contributions, scenario/task/findings, datasets, preprocessing/perturbation, model, performance and link to their implementation codes (if publically released). 
+* [Summarized Datasets Table](#summarized-datasets-table)
+* [Summarized Studies Table](#summarized-studies-table) An extended summary table of the 43 reviewed papers, including title, author/year, challenges, contributions, scenario/task/findings, datasets, preprocessing/perturbation, model, performance and link to their implementation codes (if publically released). 
 
 ## Citation
 If you find this paper useful for your research, please consider citing it:
@@ -32,9 +36,9 @@ If you find this paper useful for your research, please consider citing it:
     DOI = {10.3390/s23094221}
     }
 ```
+## Summarized Datasets Table
 
-
-## Extended summary table:
+## Summarized Studies Table
 | Title  	| Author (Year) 	| Challenge 	| Contribution 	| Scenario/task/findings 	| Datsets 	| Preprocessing/perturbation 	| Model 	| Performance 	| Code 	|
 |:---:	|---	|---	|---	|---	|---	|---	|---	|---	|---	|
 | First Steps <br>Towards <br>Self-Supervised <br>Pretraining <br>of the <br>12-Lead ECG 	| Gedon et al. <br>(2022) 	| Discover a supervision signal from the data itself for self-supervised represenation learning 	| 1) Define a self-supervised learning task and pretraining procedure which <br>can learn generalizable features of ECG data, <br>2) Develop and show that a ResNet based architecture can successfully be <br>used in combination with our learning task.  	| ECG reconstruction and <br>(anomalies)classification; <br>Pretraining on the CODE <br>training dataset, <br>Use transfer learning <br>with the ECG benchmarks: <br>PTB-XL and CPSC dataset; 	| CODE, <br>CPSC 2018, <br>PTB-XL 	|  	| U-ResNet: <br>ResNet + encoder-decoder <br>+ channel-wise dense layer<br> + U-Net based skip-connections.  <br>Downstream task(classification): <br>encoder (no bottleneck layer, <br>no U-Net skip connections) + <br>linear classifier  	| AUC：<br>CPSC: <br>+PT: <br>0.954; <br><br>PTB-XL:<br>+PT: <br>0.919 	| - 	|
