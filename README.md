@@ -26,15 +26,16 @@ We carefully reviewed 43 papers in the field of self-supervised contrastive lear
 If you find this paper useful for your research, please consider citing it:
 
 ```
-  @Article{liuself2023survey,
-    AUTHOR = {Liu, Ziyu and Alavi, Azadeh and Li, Minyi and Zhang, Xiang},
-    TITLE = {Self-Supervised Contrastive Learning for Medical Time Series: A Systematic Review},
-    JOURNAL = {Sensors},
-    VOLUME = {23},
-    YEAR = {2023},
-    NUMBER = {9},
-    DOI = {10.3390/s23094221}
-    }
+  @article{liu2023self,
+   title={Self-Supervised Contrastive Learning for Medical Time Series: A Systematic Review},
+   author={Liu, Ziyu and Alavi, Azadeh and Li, Minyi and Zhang, Xiang},
+   journal={Sensors},
+   volume={23},
+   number={9},
+   pages={4221},
+   year={2023},
+   publisher={MDPI}
+ }
 ```
 ***
 
