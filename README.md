@@ -9,7 +9,7 @@
 This is for the survey paper **Self-Supervised Contrastive Learning for Medical Time Series: A Systematic Review** which was published in *Sensors* in 2023. 
 
 
-#### Authors: Ziyu Liu (ziyu.liu2@student.rmit.edu.au), Azadeh Alavi (azadeh.alavi@rmit.edu.au), Minyi Li (liminyi0709@gmail.com) and Xiang Zhang (xiang.zhang@uncc.edu)
+#### Authors: Ziyu Liu (ziyu.liu2@student.rmit.edu.au), Azadeh Alavi, Minyi Li and Xiang Zhang
 
 ### [Paper link](https://www.mdpi.com/1424-8220/23/9/4221)
 
